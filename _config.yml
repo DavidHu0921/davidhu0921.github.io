@@ -1,13 +1,13 @@
 # Site settings
-title: Clean Blog
+title: Windyland
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+email: david@davidwho.me
+description: "Let's happy coding!"
 baseurl: ""
-url: "http://yourdomain.com"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
+url: "http:/davidwho.me"
+twitter_username: davdhu92
+github_username:  davdhu92
+facebook_username:  davdhu92
 
 # Build settings
 markdown: kramdown
