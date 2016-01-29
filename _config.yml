@@ -9,7 +9,7 @@
 title: David's Blog
 email: davidhu920921@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  这里会不定期的放一些文章，不一定就是完全关于技术分享的，希望这些文章有你喜欢的。
+胡尼玛，目前就职于暴走漫画上海，负责iOS开发。这里会不定期的放一些文章，不一定就是完全关于技术分享的，希望这些文章有你喜欢的。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://davidwho.me" # the base hostname & protocol for your site
 twitter_username: DavidHu_iOS
