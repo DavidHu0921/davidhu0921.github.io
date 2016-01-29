@@ -2,12 +2,12 @@
 title: Windyland
 header-img: img/home-bg.jpg
 email: david@davidwho.me
-description: "Let's happy coding!"
+description: "Thinking, Coding, Sharing"
 baseurl: ""
 url: "http:/davidwho.me"
-twitter_username: davdhu92
-github_username:  davdhu92
-facebook_username:  davdhu92
+twitter_username: DavidHu_iOS
+github_username:  DavidHu0921
+
 
 # Build settings
 markdown: kramdown
