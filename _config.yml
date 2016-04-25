@@ -10,7 +10,7 @@ github_username:  DavidHu0921
 
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
 permalink: pretty
 paginate: 5
