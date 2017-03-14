@@ -70,7 +70,7 @@ UIColor *myColour = [UIColor whiteColor];
 ```
 
 
-##代码组织
+## 代码组织
 
 使用`#pragma mark -`将函数分组和协议/委托实现中的方法根据这个结构分类. 
 
@@ -114,7 +114,7 @@ UIColor *myColour = [UIColor whiteColor];
 - (NSString *)description {}
 ```
 
-##缩进
+## 缩进
 
 * 缩进使用2个空格(这节省了打印空间, 并使得线包装不太可能). 不要缩进标签(tabs). 请务必在Xcode中设置此首选项. 
 * 方法大括号和其他大括号(`if`/`else` /`switch` /`while`等)总是在与语句相同的行上打开, 但在新行上关闭. 
@@ -174,7 +174,7 @@ if (user.isHappy) {
 
 通常应该避免块注释, 因为代码应该尽可能自我记录, 只需要间歇性的, 少量的解释.  *例外:这不适用于用于生成文档的那些注释. 
 
-##命名
+## 命名
 
 应尽可能遵守苹果命名约定, 特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)相关的命名规则  [NARC] (http://stackoverflow.com/a/2865194/340508). 
 
@@ -257,7 +257,7 @@ id varnm;
 - (instancetype)initWith:(int)width and:(int)height;  // Never do this.
 ```
 
-##变量
+## 变量
 
 变量应尽可能描述性地命名. 除了在`for ()`循环中, 应该避免单字母变量名. 
 
@@ -285,7 +285,7 @@ id varnm;
 }
 ```
 
-##属性
+## 属性
 
 属性应该被明确列出, 并且将帮助新程序员在阅读代码时. 属性的顺序应该是存储然后原子性, 这与从Interface Builder连接UI元素时自动生成的代码一致. 
 
@@ -319,7 +319,7 @@ id varnm;
 @property (copy, nonatomic) NSString *tutorialName;
 ```
 
-##点符号语法
+## 点符号语法
 
 点语法纯粹是一个方便的包装器访问器方法调用. 当使用点语法时, 仍使用getter和setter方法访问或更改属性. 阅读更多[这里] (https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html)
 
@@ -341,7 +341,7 @@ NSInteger arrayCount = self.array.count;
 UIApplication.sharedApplication.delegate;
 ```
 
-##字面值
+## 字面值
 
 当创建这些对象的不可变实例时, 应该使用'NSString', 'NSDictionary', 'NSArray'和'NSNumber'. 特别注意`nil`值不能传递到`NSArray`和`NSDictionary`字面量, 因为这将导致崩溃. 
 
@@ -363,7 +363,7 @@ NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];
 NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 ```
 
-##常量
+## 常量
 
 常数优于内联字符串字面值或数字, 因为它们允许容易地再现常用的变量并且可以快速改变而不需要查找和替换. 常量应该声明为`static`常量, 而不是`#define`s, 除非显式地用作宏. 
 
@@ -383,7 +383,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 #define thumbnailHeight 2
 ```
 
-##枚举类型
+## 枚举类型
 
 当使用`enum`s时, 建议使用新的固定底层类型规范, 因为它具有更强的类型检查和代码完成.  SDK现在包括一个宏, 以便于和鼓励使用固定的底层类型:`NS_ENUM ()`
 
@@ -478,7 +478,7 @@ switch (menuType) {
 }
 ```
 
-##私有属性
+## 私有属性
 
 私有属性应该在类的实现文件中的类扩展 (匿名类别)中声明. 除非扩展另一个类, 否则不应使用命名类别 (例如`RWTPrivate`或`private`). 匿名类可以共享/公开以使用<headerfile> + Private.h文件命名约定进行测试. 
 
@@ -494,7 +494,7 @@ switch (menuType) {
 @end
 ```
 
-##Boolean
+## Boolean
 
 Objective-C使用`YES`和`NO`. 因此, `true`和`false`只能用于CoreFoundation, C或C ++代码. 因为`nil`解析为`NO`, 所以不必在条件下比较. 永远不要直接与`YES'比较, 因为`YES`被定义为1, 一个`BOOL`可以高达8位. 
 
@@ -524,7 +524,7 @@ if (isAwesome == true) {} // Never do this.
 
 来自[Cocoa命名指南](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284 -BAJGIIJE) 的文字和示例
 
-##条件
+## 条件
 
 条件体应该总是使用大括号, 即使条件体可以没有大括号 (例如, 它只有一行), 以防止错误. 这些错误包括添加第二行并期望它是if语句的一部分. 另一个, [甚至更危险的缺陷] (http://programmers.stackexchange.com/a/16530)可能发生在"内部行的if语句被注释掉, 而下一行不知不觉成为if-声明. 此外, 这种风格与所有其他条件更一致, 因此更容易扫描. 
 
@@ -547,7 +547,7 @@ if (!error)
 if (!error) return success;
 ```
 
-###三元运算符
+### 三元运算符
 
 三元运算符`？:`只应用于提高清晰度或代码整齐性. 单个条件通常都应该被评估. 评估多个条件通常更容易理解为一个"if语句, 或重构为实例变量. 一般来说, 三元运算符的最佳使用是在赋值变量并决定使用哪个值. 
 
@@ -569,7 +569,7 @@ result = isHorizontal ? x : y;
 result = a > b ? x = c > d ? c : d : y;
 ```
 
-##初始方法
+## 初始方法
 
 Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用"instancetype的返回类型, 而不是"id. 
 
@@ -586,7 +586,7 @@ Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用
 
 参见[类构造器方法] (#class-constructor-methods)链接到instancetype的文章. 
 
-##类构造器方法
+## 类构造器方法
 
 在使用类构造函数方法时, 这些应该总是返回类型"instancetype和永不"id. 这确保编译器正确推断结果类型. 
 
@@ -654,7 +654,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 }
 ```
 
-##错误处理
+## 错误处理
 
 当方法通过引用返回错误参数时, 打开返回值, 而不是错误变量. 
 
@@ -680,7 +680,7 @@ if (error) {
 一些Apple的API在成功的情况下将错误参数 (如果非NULL)写入垃圾值, 因此打开错误可能会导致错误的否定 (随后崩溃). 
 
 
-##单例
+## 单例
 
 Singleton对象应该使用线程安全模式来创建它们的共享实例. 
 
@@ -700,7 +700,7 @@ Singleton对象应该使用线程安全模式来创建它们的共享实例.
 这将防止[可能和有时多发的崩溃] (http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html). 
 
 
-##换行
+## 换行
 
 换行符是一个重要的主题, 因为此样式指南专注于打印和在线可读性. 
 
@@ -724,7 +724,7 @@ self.productsRequest = [[SKProductsRequest alloc]
 
 如果可能, 请始终在目标的构建设置中打开"将警告视为错误, 并尽可能启用尽可能多的[其他警告] (http://boredzo.org/blog/archives/2009-11-07/warnings). 如果您需要忽略特定警告, 请使用[Clang's pragma feature] (http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas). 
 
-#其他Objective-C样式指南
+# 其他Objective-C样式指南
 
 如果我们不适合你的口味, 看看一些其他的风格指南:
 
