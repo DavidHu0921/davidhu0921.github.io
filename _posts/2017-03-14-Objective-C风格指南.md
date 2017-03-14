@@ -178,7 +178,7 @@ else {
 
 ## 命名
 
-应尽可能遵守苹果命名约定, 特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)相关的命名规则  [NARC] (http://stackoverflow.com/a/2865194/340508). 
+应尽可能遵守苹果命名约定, 特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)相关的命名规则  [NARC](http://stackoverflow.com/a/2865194/340508). 
 
 长, 描述性方法和变量名都很好. 
 
@@ -265,9 +265,9 @@ id varnm;
 
 指示指针的星号属于变量, 例如, 'NSString * text'不是'NSString * text'或'NSString * text', 除非是常量. 
 
-应该尽可能使用[私有属性] (#private-properties)来代替实例变量. 虽然使用实例变量是一种有效的做事方式, 通过同意喜欢属性我们的代码将更加一致. 
+应该尽可能使用[私有属性](#private-properties)来代替实例变量. 虽然使用实例变量是一种有效的做事方式, 通过同意喜欢属性我们的代码将更加一致. 
 
-除了在初始化方法 (`init`, `initWithCoder:`等...), `dealloc`方法和自定义setter和getter中, 应该避免直接访问'back'属性的实例变量. 有关在初始化方法和dealloc中使用Accessor方法的更多信息, 请参见[here] (https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/ doc / uid / TP40004447-SW6). 
+除了在初始化方法 (`init`, `initWithCoder:`等...), `dealloc`方法和自定义setter和getter中, 应该避免直接访问'back'属性的实例变量. 有关在初始化方法和dealloc中使用Accessor方法的更多信息, 请参见 [here](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6). 
 
 **首选:**
 
@@ -323,7 +323,7 @@ id varnm;
 
 ## 点符号语法
 
-点语法纯粹是一个方便的包装器访问器方法调用. 当使用点语法时, 仍使用getter和setter方法访问或更改属性. 阅读更多[这里] (https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html)
+点语法纯粹是一个方便的包装器访问器方法调用. 当使用点语法时, 仍使用getter和setter方法访问或更改属性. 阅读更多[这里](https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html)
 
 点标记应该**总是**用于访问和改变属性, 因为它使代码更简洁. 在所有其他情况下优选括号符号. 
 
@@ -528,7 +528,7 @@ if (isAwesome == true) {} // Never do this.
 
 ## 条件
 
-条件体应该总是使用大括号, 即使条件体可以没有大括号 (例如, 它只有一行), 以防止错误. 这些错误包括添加第二行并期望它是if语句的一部分. 另一个, [甚至更危险的缺陷] (http://programmers.stackexchange.com/a/16530)可能发生在"内部行的if语句被注释掉, 而下一行不知不觉成为if-声明. 此外, 这种风格与所有其他条件更一致, 因此更容易扫描. 
+条件体应该总是使用大括号, 即使条件体可以没有大括号 (例如, 它只有一行), 以防止错误. 这些错误包括添加第二行并期望它是if语句的一部分. 另一个, [甚至更危险的缺陷](http://programmers.stackexchange.com/a/16530)可能发生在"内部行的if语句被注释掉, 而下一行不知不觉成为if-声明. 此外, 这种风格与所有其他条件更一致, 因此更容易扫描. 
 
 **首选:**
 
@@ -586,7 +586,7 @@ Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用
 ```
 
 
-参见[类构造器方法] (#class-constructor-methods)链接到instancetype的文章. 
+参见[类构造器方法](#class-constructor-methods)链接到instancetype的文章. 
 
 ## 类构造器方法
 
@@ -598,11 +598,11 @@ Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用
 @end
 ```
 
-有关instancetype的更多信息, 请参见[NSHipster.com] (http://nshipster.com/instancetype/). 
+有关instancetype的更多信息, 请参见[NSHipster.com](http://nshipster.com/instancetype/). 
 
 ## CGRect函数
 
-当访问`CGRect`的`x`, `y`, `width`或`height`时, 总是使用[`CGGeometry`函数] (http://developer.apple.com/library/ios/#文档/ graphicsimaging / reference / CGGeometry / Reference / reference.html)而不是直接的struct成员访问. 从苹果的`CGGeometry`引用:
+当访问`CGRect`的`x`, `y`, `width`或`height`时, 总是使用[CGGeometry函数](http://developer.apple.com/library/ios/#文档/graphicsimaging/reference/CGGeometry/Reference/reference.html)而不是直接的struct成员访问. 从苹果的`CGGeometry`引用:
 
 >本参考中描述的将CGRect数据结构作为输入的所有函数在计算结果之前隐式标准化这些矩形. 因此, 您的应用程序应避免直接读取和写入存储在CGRect数据结构中的数据. 相反, 使用此处描述的函数来处理矩形并检索其特征. 
 
@@ -699,7 +699,7 @@ Singleton对象应该使用线程安全模式来创建它们的共享实例.
 }
 ```
 
-这将防止[可能和有时多发的崩溃] (http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html). 
+这将防止[可能和有时多发的崩溃](http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html). 
 
 
 ## 换行
@@ -724,7 +724,7 @@ self.productsRequest = [[SKProductsRequest alloc]
 
 物理文件应该与Xcode项目文件保持同步, 以避免文件蔓延. 创建的任何Xcode组都应由文件系统中的文件夹反映. 代码不仅应按类型分组, 还应按特征分组, 以便更清楚. 
 
-如果可能, 请始终在目标的构建设置中打开"将警告视为错误, 并尽可能启用尽可能多的[其他警告] (http://boredzo.org/blog/archives/2009-11-07/warnings). 如果您需要忽略特定警告, 请使用[Clang's pragma feature] (http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas). 
+如果可能, 请始终在目标的构建设置中打开"将警告视为错误, 并尽可能启用尽可能多的[其他警告](http://boredzo.org/blog/archives/2009-11-07/warnings). 如果您需要忽略特定警告, 请使用[Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas). 
 
 # 其他Objective-C样式指南
 
