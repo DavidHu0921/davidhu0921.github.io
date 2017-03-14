@@ -132,10 +132,12 @@ if (user.isHappy) {
 **不推荐:**
 
 ```objc
-if (user.isHappy) {
-  //Do something
-} else {
-  //Do something else
+if (user.isHappy)
+{
+    //Do something
+}
+else {
+    //Do something else
 }
 ```
 
@@ -310,13 +312,13 @@ id varnm;
 
 
 ```objc
-@property (copy, nonatomic)NSString * tutorialName;
+@property (copy, nonatomic) NSString *tutorialName;
 ```
 
 **不推荐:**
 
 ```objc
-@property (copy, nonatomic) NSString *tutorialName;
+@property (strong, nonatomic) NSString *tutorialName;
 ```
 
 ## 点符号语法
