@@ -12,7 +12,8 @@ categories: iOS学习笔记
 
 ## Credits
 
-来源: [GitHub](https://github.com/raywenderlich/objective-c-style-guide/blob/master/README.md) 各种版权声明信息和作者信息请在连接里查看
+来源: [GitHub](https://github.com/raywenderlich/objective-c-style-guide/blob/master/README.md) 各种版权声明信息和作者信息请在连接里查看。
+但是我在看完之后发现了一些明显不符合苹果原生推荐的风格，因此作出一些改动，会跟英文原文不一样，不做特殊标注。
 
 ## 背景
 
@@ -42,7 +43,7 @@ categories: iOS学习笔记
 * [私有属性](#private-properties)
 * [Booleans](#booleans)
 * [条件](#条件)
-	* [Ternary Operator](#ternary-operator)
+	* [三元操作](#ternary-operator)
 * [Init Methods](#init-methods)
 * [类构造方法](#class-constructor-methods)
 * [CGRect函数](#cgrect函数)
