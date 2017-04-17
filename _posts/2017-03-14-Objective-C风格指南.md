@@ -26,31 +26,31 @@ categories: iOS学习笔记
 
 ## 目录
 
-* [语言](#语言)
+* [语言](#language)
 * [代码组织](#code-organization)
 * [缩进](#spacing)
-* [评论](#条评论)
+* [评论](#comments)
 * [命名](#naming)
-	* [下划线](#下划线)
-* [方法](#方法)
+	* [下划线](#underscores)
+* [方法](#methods)
 * [变量](#variables)
 * [属性属性](#property-attributes)
 * [点语法](#dot-notation-syntax)
 * [字面值](#literal)
-* [常数](#常数)
-* [枚举类型](#枚举类型)
+* [常数](#constants)
+* [枚举类型](#enumerated-types)
 * [Switch-Case](#case-statements)
 * [私有属性](#private-properties)
 * [Booleans](#booleans)
-* [条件](#条件)
+* [条件](#conditionals)
 	* [三元操作](#ternary-operator)
 * [Init Methods](#init-methods)
 * [类构造方法](#class-constructor-methods)
-* [CGRect函数](#cgrect函数)
+* [CGRect函数](#cgrect-functions)
 * [Golden path](#golden-path)
-* [错误处理](#错误处理)
+* [错误处理](#error-handling)
 * [Singletons 单例](#singletons)
-* [换行符](#换行符)
+* [换行符](#line-breaks)
 * [Xcode项目](#xcode-project)
 
 
@@ -73,7 +73,7 @@ UIColor *myColour = [UIColor whiteColor];
 
 ## 代码组织
 
-使用`#pragma mark -`将函数分组和协议/委托实现中的方法根据这个结构分类. 
+使用`#pragma mark -`将方法和协议/委托按以下结构分类. 
 
 ```objc
 #pragma mark - Lifecycle
@@ -117,16 +117,16 @@ UIColor *myColour = [UIColor whiteColor];
 
 ## 缩进
 
-* 缩进使用2个空格(这节省了打印空间, 并使得线包装不太可能). 不要缩进标签(tabs). 请务必在Xcode中设置此首选项. 
-* 方法大括号和其他大括号(`if`/`else` /`switch` /`while`等)总是在与语句相同的行上打开, 但在新行上关闭. 
+* 使用默认的tabs 来锁紧。（原文是用两个空格，非常不认同） 
+* 方法大括号和其他大括号(`if`/`else` /`switch` /`while`等)总是在与语句相同的行上打开, 但在新行上关闭. (else 前后记得加个空格)
 
 **首选:**
 
 ```objc
 if (user.isHappy) {
-  //Do something
+	//Do something
 } else {
-  //Do something else
+	//Do something else
 }
 ```
 
@@ -142,9 +142,9 @@ else {
 }
 ```
 
-* 在方法之间应该有一个空白行, 以帮助视觉清晰和组织. 方法中的空白应该分离功能, 但通常应该有新的方法. 
-* 喜欢使用自动合成. 但是如果需要, `@ synthesize`和`@ dynamic`应该在实现中的新行上声明. 
-* 应经常避免冒号对齐方法调用. 有些情况下, 方法签名可能有> = 3冒号, 冒号对齐使代码更易读. **千万不要** 但是冒号对齐方法包含block, 因为Xcode的缩进使它难以辨认. 
+* 在方法之间应该有一个空白行, 以帮助视觉清晰和组织. 方法中的空格应该按功能分离, 但通常应该是新的方法. 
+* 推荐使用自动合成. 但是如果需要, `@ synthesize`和`@ dynamic`应该在实现中的新行上声明. 
+* 应经常避免冒号对齐方法. 在一个方法里面有多于三个冒号的情况下, 冒号对齐使代码更易读. 但是 **千万不要** 在有block的时候用冒号对齐, 因为Xcode的缩进会使它难以辨认. 
 
 **首选:**
 
@@ -173,15 +173,27 @@ else {
 
 ## 注释
 
-当需要它们时, 应该使用注释来解释**为什么**一个特定的代码块做某事. 任何使用的注释必须保持最新或删除. 
+当需要它们时, 注释应该用来解释一段特定的代码块 **为什么** 做了这些事情. 任何注释必须保持更新或删除. 
 
-通常应该避免块注释, 因为代码应该尽可能自我记录, 只需要间歇性的, 少量的解释.  *例外:这不适用于用于生成文档的那些注释. 
+应该尽量避免大段注释, 因为代码最好配上间歇性的、少量的注释就能做到自注释。*例外* :这不适用于用于生成文档的那些注释. 
+
+**头文件里推荐写成下面这个格式：**
+
+```
+/**
+ * 将申请到的UID及校验字段设置给SDK
+ * @param uid 用户id
+ * @param verified 校验字段
+ * @return 是否成功
+ */
+- (BOOL)setUserId:(NSString *)uid withVerified:(NSString *)verified;
+```
 
 ## 命名
 
 应尽可能遵守苹果命名约定, 特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)相关的命名规则  [NARC](http://stackoverflow.com/a/2865194/340508). 
 
-长, 描述性方法和变量名都很好. 
+长的、描述清晰的方法和变量名都很好. 
 
 
 **首选:**
@@ -196,9 +208,9 @@ UIButton *settingsButton;
 UIButton *setBut;
 ```
 
-对于类名和常量, 应始终使用三字母前缀, 但对于Core Data实体名称可以省略. 对于任何官方raywenderlich.com图书, 入门套件或教程, 应使用前缀'RWT'. 
+对于类名和常量, 应始终使用三字母前缀, 但对于CoreData实体名称可以省略. 对于任何官方raywenderlich.com图书, 入门套件或教程, 应使用前缀'RWT'. 
 
-常量应该是骆驼大小写, 所有单词都大写, 前缀为相关的类名称. 
+常量应该是驼峰式, 所有单词都大写, 前缀为相关的类名称. 
 
 **首选:**
 
@@ -218,7 +230,7 @@ static NSTimeInterval const fadetime = 1.7;
 **首选:**
 
 ```objc
-@property (strong, nonatomic) NSString *descriptiveVariableName;
+@property (copy, nonatomic) NSString *descriptiveVariableName;
 ```
 
 **不推荐:**
@@ -229,17 +241,17 @@ id varnm;
 
 ### 下划线
 
-当使用属性时, 实例变量应该总是使用`self.`来访问和改变. 这意味着所有属性将在视觉上不同, 因为它们都将以"self.开头. 
+当使用属性时, 实例变量应该总是使用`self.`来访问和改变. 这意味着所有属性将在视觉上不同, 因为它们都将以self.开头. 
 
-一个例外是:在初始化器内部, 后台实例变量 (即_variableName)应该直接使用, 以避免getter / setter的任何潜在的副作用. 
+一个例外是:在初始化方法内部, 后台实例变量 (即 _variableName)应该直接使用, 以避免getter/setter的任何潜在的副作用. 
 
 局部变量不应包含下划线. 
 
 ## 方法
 
-在方法签名中, 在方法类型 ( - / +符号)后面应该有一个空格. 方法段之间应该有一个空格 (匹配Apple的风格). 始终包括一个关键字, 并用描述该参数的参数前面的单词进行描述. 
+在方法声明中, 在方法类型 (-/+符号)后面应该有一个空格. 方法段之间应该有一个空格 (匹配Apple的风格). 始终包括一个关键字, 并用描述该参数前面的单词描述他的作用. 
 
-保留字"和的使用. 它不应该用于多个参数, 如下面的`initWithWidth:height:`示例所示. 
+避免去使用“and”. 它不应该用于多个参数, 如下面的`initWithWidth:height:`示例所示. 
 
 **首选:**
 
@@ -264,11 +276,11 @@ id varnm;
 
 变量应尽可能描述性地命名. 除了在`for ()`循环中, 应该避免单字母变量名. 
 
-指示指针的星号属于变量, 例如, 'NSString * text'不是'NSString * text'或'NSString * text', 除非是常量. 
+指示指针的星号属于变量, 例如, `NSString *text` 不是 `NSString* text` 或 `NSString * text`, 除非是常量. 
 
-应该尽可能使用[私有属性](#private-properties)来代替实例变量. 虽然使用实例变量是一种有效的做事方式, 通过同意喜欢属性我们的代码将更加一致. 
+应该尽可能使用[私有属性](#private-properties)来代替实例变量. 虽然使用实例变量是可行的, 但统一使用property 将使我们的代码更加一致. 
 
-除了在初始化方法 (`init`, `initWithCoder:`等...), `dealloc`方法和自定义setter和getter中, 应该避免直接访问'back'属性的实例变量. 有关在初始化方法和dealloc中使用Accessor方法的更多信息, 请参见 [here](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6). 
+除了在初始化方法 (`init`, `initWithCoder:`等...), `dealloc`方法和自定义setter和getter中, 应该避免直接访问'back'属性的实例变量. 有关在初始化方法和dealloc中使用Accessor方法的更多信息, 请参见 [这里](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6). 
 
 **首选:**
 
@@ -741,3 +753,4 @@ self.productsRequest = [[SKProductsRequest alloc]
 * [CocoaDevCentral](http://cocoadevcentral.com/articles/000082.php)
 * [Luke Redpath](http://lukeredpath.co.uk/blog/my-objective-c-style-guide.html)
 * [Marcus Zarra](http://www.cimgf.com/zds-code-style-guide/)
+
