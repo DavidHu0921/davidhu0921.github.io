@@ -36,10 +36,10 @@ categories: iOS学习笔记
 * [变量](#variables)
 * [属性属性](#property-attributes)
 * [点语法](#dot-notation-syntax)
-* [字面值](#literal)
+* [数值](#literal)
 * [常数](#constants)
 * [枚举类型](#enumerated-types)
-* [Switch-Case](#case-statements)
+* [条件分支](#case-statements)
 * [私有属性](#private-properties)
 * [Booleans](#booleans)
 * [条件](#conditionals)
@@ -274,11 +274,7 @@ id varnm;
 
 ## 变量
 
-变量应尽可能描述性地命名. 除了在`for ()`循环中, 应该避免单字母变量名. 
-
-指示指针的星号属于变量, 例如, `NSString *text` 不是 `NSString* text` 或 `NSString * text`, 除非是常量. 
-
-应该尽可能使用[私有属性](#private-properties)来代替实例变量. 虽然使用实例变量是可行的, 但统一使用property 将使我们的代码更加一致. 
+变量应尽可能描述性地命名. 除了在`for ()`循环中, 应该避免单字母变量名. 指示指针的星号属于变量, 例如, `NSString *text` 不是 `NSString* text` 或 `NSString * text`, 除非是常量. 应该尽可能使用[私有属性](#private-properties)来代替实例变量. 虽然使用实例变量是可行的, 但统一使用property 将使我们的代码更加一致. 
 
 除了在初始化方法 (`init`, `initWithCoder:`等...), `dealloc`方法和自定义setter和getter中, 应该避免直接访问'back'属性的实例变量. 有关在初始化方法和dealloc中使用Accessor方法的更多信息, 请参见 [这里](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6). 
 
@@ -302,7 +298,7 @@ id varnm;
 
 ## 属性
 
-属性应该被明确列出, 并且将帮助新程序员在阅读代码时. 属性的顺序应该是存储然后原子性, 这与从Interface Builder连接UI元素时自动生成的代码一致. 
+属性应该被明确列出, 这有助于其他程序员阅读代码. 属性的顺序应该是存储然后原子性, 这与从Interface Builder连接UI元素时自动生成的代码一致. 
 
 **首选:**
 
@@ -318,8 +314,7 @@ id varnm;
 @property (nonatomic) NSString *tutorialName;
 ```
 
-可变对象 (例如NSString)的属性应该更喜欢`copy`而不是`strong`. 
-为什么？即使你声明一个属性为NSString, 有人可能传入一个NSMutableString的实例, 然后改变它, 而不注意到. 
+可变对象 (例如NSString)的属性应该使用`copy`而不是`strong`. 为什么？即使你声明一个属性为NSString, 别人可能传入一个NSMutableString的实例, 然后改变它, 而不注意到. 
 
 **首选:**
 
@@ -336,9 +331,9 @@ id varnm;
 
 ## 点符号语法
 
-点语法纯粹是一个方便的包装器访问器方法调用. 当使用点语法时, 仍使用getter和setter方法访问或更改属性. 阅读更多[这里](https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html)
+点语法纯粹是一个方便的包装器访问方法调用. 当使用点语法时, 仍使用getter和setter方法访问或更改属性. 阅读更多[这里](https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html)
 
-点标记应该**总是**用于访问和改变属性, 因为它使代码更简洁. 在所有其他情况下优选括号符号. 
+点标记应该**总是**用于访问和改变属性, 因为它使代码更简洁. 在所有其他情况下优先用括号调用. 
 
 **首选:**
 
@@ -356,9 +351,9 @@ NSInteger arrayCount = self.array.count;
 UIApplication.sharedApplication.delegate;
 ```
 
-## 字面值
+## 数值
 
-当创建这些对象的不可变实例时, 应该使用'NSString', 'NSDictionary', 'NSArray'和'NSNumber'. 特别注意`nil`值不能传递到`NSArray`和`NSDictionary`字面量, 因为这将导致崩溃. 
+当创建这些对象的不可变实例时, 应该使用`NSString`, `NSDictionary`, `NSArray`和`NSNumber`. 特别注意`nil`值不能传递到`NSArray`和`NSDictionary`数值, 因为这将导致崩溃. 
 
 **首选:**
 
@@ -380,7 +375,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 
 ## 常量
 
-常数优于内联字符串字面值或数字, 因为它们允许容易地再现常用的变量并且可以快速改变而不需要查找和替换. 常量应该声明为`static`常量, 而不是`#define`s, 除非显式地用作宏. 
+常量优于内联字符串数值或数字, 因为它们允许方便地再现常用的变量并且可以快速改变而不需要查找和替换. 常量应该声明为`static`常量, 而不是`#define`, 除非显式地用作宏. 
 
 **首选:**
 
@@ -400,7 +395,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 
 ## 枚举类型
 
-当使用`enum`s时, 建议使用新的固定底层类型规范, 因为它具有更强的类型检查和代码完成.  SDK现在包括一个宏, 以便于和鼓励使用固定的底层类型:`NS_ENUM ()`
+当使用`enum`时, 建议使用新的固定底层类型规范, 因为它具有更强的类型检查和代码完成度.  SDK现在包括一个宏, 以便于和鼓励使用固定的底层类型:`NS_ENUM ()`
 
 **例如:**
 
@@ -423,7 +418,7 @@ typedef NS_ENUM(NSInteger, RWTGlobalConstants) {
 };
 ```
 
-较旧的k风格常量定义应该是**避免**, 除非编写CoreFoundation C代码 (不太可能). 
+应该**避免**使用较旧的k风格常量定义, 除非编写CoreFoundation C代码 (不太可能). 
 
 **不推荐:**
 
@@ -434,9 +429,9 @@ enum GlobalConstants {
 };
 ```
 
-## Switch-Case
+## 条件分支
 
-大括号不需要case语句, 除非由编译器强制. 
+case语句不需要大括号, 除非由编译器强制. 
 当一个案例包含多行时, 应该添加大括号. 
 
 ```objc
@@ -456,10 +451,9 @@ switch (condition) {
     // ...
     break;
 }
-
 ```
 
-有时候, 相同的代码可以用于多种情况, 应该使用下拉菜单. 下拉是删除case的'break'语句, 从而允许执行的流程传递到下一个case值. 为了编码的清晰, 应该评论一个下拉列表. 
+有时候, 相同的代码可以用于多种情况, 应该直接向下执行. 向下执行就是删除case的'break'语句, 从而允许执行的流程传递到下一个case值. 为了编码的清晰, 应该有一个向下执行的注释. 
 
 ```objc
 switch (condition) {
@@ -472,10 +466,9 @@ switch (condition) {
     // ...
     break;
 }
-
 ```
 
-当为交换机使用枚举类型时, 不需要"default. 例如:
+当判断的是枚举类型时, 不需要"default. 例如:
 
 ```objc
 RWTLeftMenuTopItemType menuType = RWTLeftMenuTopItemMain;
