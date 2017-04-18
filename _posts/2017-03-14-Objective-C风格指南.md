@@ -497,16 +497,16 @@ switch (menuType) {
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
-@property (strong, nonatomic) UIWebView *adXWebView;
+@property (strong, nonatomic) UIWebView *adXWebView
 
 @end
 ```
 
 ## Boolean
 
-Objective-C使用`YES`和`NO`. 因此, `true`和`false`只能用于CoreFoundation, C或C ++代码. 因为`nil`解析为`NO`, 所以不必在条件下比较. 永远不要直接与`YES'比较, 因为`YES`被定义为1, 一个`BOOL`可以高达8位. 
+Objective-C使用`YES`和`NO`. 因此, `true`和`false`只能用于CoreFoundation,比如C 或C++ 代码. 因为`nil`解析为`NO`, 所以不必在条件下比较. 永远不要直接与`YES`比较, 因为`YES`被定义为1, 一个`BOOL`可以高达8位. 
 
-这允许跨文件的更一致性和更大的视觉清晰度. 
+这允许跨文件的更一致性和更好的视觉清晰度. 
 
 **首选:**
 
@@ -524,7 +524,7 @@ if (isAwesome == YES) {} // Never do this.
 if (isAwesome == true) {} // Never do this.
 ```
 
-如果`BOOL`属性的名称表示为形容词, 该属性可以省略"is前缀, 但指定get访问器的常规名称, 例如:
+如果`BOOL`属性的名称表示为形容词, 该属性可以省略"is"前缀, 但指定get访问器的常规名称, 例如:
 
 ```objc
 @property (assign, getter=isEditable) BOOL editable;
@@ -534,7 +534,7 @@ if (isAwesome == true) {} // Never do this.
 
 ## 条件
 
-条件体应该总是使用大括号, 即使条件体可以没有大括号 (例如, 它只有一行), 以防止错误. 这些错误包括添加第二行并期望它是if语句的一部分. 另一个, [甚至更危险的缺陷](http://programmers.stackexchange.com/a/16530)可能发生在"内部行的if语句被注释掉, 而下一行不知不觉成为if-声明. 此外, 这种风格与所有其他条件更一致, 因此更容易扫描. 
+为了防止错误，条件体应该总是使用大括号, 即使条件体可以没有大括号 (例如, 它只有一行). 这些错误包括:添加第二行并期望它是if语句的一部分. 另一个, [甚至更危险的缺陷](http://programmers.stackexchange.com/a/16530)可能会使if“内部”的语句被注释掉, 而下一行不知不觉成为if的声明. 此外, 这种风格与所有其他条件更一致, 因此更容易扫描. 
 
 **首选:**
 
@@ -557,9 +557,9 @@ if (!error) return success;
 
 ### 三元运算符
 
-三元运算符`？:`只应用于提高清晰度或代码整齐性. 单个条件通常都应该被评估. 评估多个条件通常更容易理解为一个"if语句, 或重构为实例变量. 一般来说, 三元运算符的最佳使用是在赋值变量并决定使用哪个值. 
+三元运算符`？:`只应用于提高清晰度或代码整齐性. 单个条件通常都应该被评估. 评估多个条件通常更容易理解为一个`if`语句, 或重构为实例变量. 一般来说, 三元运算符的最佳使用是在赋值变量并决定使用哪个值. 
 
-非布尔变量应该与某事比较, 并且添加括号以提高可读性. 如果被比较的变量是布尔类型, 则不需要括号. 
+非BOOL变量应该与某事比较, 并且添加括号以提高可读性. 如果被比较的变量是BOOL类型, 则不需要括号. 
 
 **首选:**
 
@@ -577,9 +577,9 @@ result = isHorizontal ? x : y;
 result = a > b ? x = c > d ? c : d : y;
 ```
 
-## 初始方法
+## 初始化方法
 
-Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用"instancetype的返回类型, 而不是"id. 
+Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用`instancetype`的返回类型, 而不是`id`. 
 
 ```objc
 - (instancetype)init {
@@ -591,12 +591,11 @@ Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用
 }
 ```
 
-
 参见[类构造器方法](#class-constructor-methods)链接到instancetype的文章. 
 
 ## 类构造器方法
 
-在使用类构造函数方法时, 这些应该总是返回类型"instancetype和永不"id. 这确保编译器正确推断结果类型. 
+在使用类构造函数方法时, 应该返回类型`instancetype`和绝对不要用`id`. 这可以确保编译器正确推断结果类型. 
 
 ```objc
 @interface Airplane
