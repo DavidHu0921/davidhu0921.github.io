@@ -609,7 +609,7 @@ Init方法应该遵循由Apple生成的代码模板提供的约定. 还应使用
 
 当访问`CGRect`的`x`, `y`, `width`或`height`时, 总是使用[CGGeometry函数](http://developer.apple.com/library/ios/#文档/graphicsimaging/reference/CGGeometry/Reference/reference.html)而不是直接的struct成员访问. 从苹果的`CGGeometry`引用:
 
->本参考中描述的将CGRect数据结构作为输入的所有函数在计算结果之前隐式标准化这些矩形. 因此, 您的应用程序应避免直接读取和写入存储在CGRect数据结构中的数据. 相反, 使用此处描述的函数来处理矩形并检索其特征. 
+>本参考中描述的将CGRect数据结构作为输入的所有函数，在计算结果之前隐式标准化这些矩形. 因此, 您的应用程序应避免直接读取和写入存储在CGRect数据结构中的数据. 相反, 使用此处描述的函数来处理矩形并检索其特征. 
 
 **首选:**
 
@@ -637,7 +637,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 ## Golden Path
 
-当使用条件编码时, 代码的左侧边距应该是"金色或"快乐路径. 也就是说, 不要嵌套`if`语句. 多个返回语句都可以. 
+当使用条件判断时, 真正逻辑代码之前的判断代码应该是“金色”或“快乐”路径. 也就是说, 不要嵌套`if`语句. 多个返回语句也是可以的. 
 
 **首选:**
 
@@ -717,19 +717,18 @@ Singleton对象应该使用线程安全模式来创建它们的共享实例.
 self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
 ```
 
-像这样的长长的代码应该被带到第二行, 遵循这个样式指南的间距部分 (两个空格). 
+像这样的长长的代码应该被带到第二行, 遵循这个样式指南的间距部分 (一个tab). 
 
 ```objc
 self.productsRequest = [[SKProductsRequest alloc] 
-  initWithProductIdentifiers:productIdentifiers];
+	initWithProductIdentifiers:productIdentifiers];
 ```
-
 
 ## Xcode项目
 
 物理文件应该与Xcode项目文件保持同步, 以避免文件蔓延. 创建的任何Xcode组都应由文件系统中的文件夹反映. 代码不仅应按类型分组, 还应按特征分组, 以便更清楚. 
 
-如果可能, 请始终在目标的构建设置中打开"将警告视为错误, 并尽可能启用尽可能多的[其他警告](http://boredzo.org/blog/archives/2009-11-07/warnings). 如果您需要忽略特定警告, 请使用[Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas). 
+如果可能, 请始终在目标的构建设置中打开"将警告视为错误", 并尽可能启用尽可能多的[其他警告](http://boredzo.org/blog/archives/2009-11-07/warnings). 如果您需要忽略特定警告, 请使用[Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas). 
 
 # 其他Objective-C样式指南
 
