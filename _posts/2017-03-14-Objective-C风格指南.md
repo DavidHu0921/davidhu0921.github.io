@@ -8,7 +8,7 @@ categories: iOS学习笔记
 
 ## 介绍
 
-目前并没有非常好的，更贴近Apple 本身推荐的Objective-C 代码风格的文档，来规范代码，便于维护和阅读。原文太长了，机翻的+人工简单筛查了一下。
+目前并没有非常好的，更贴近Apple 本身推荐的Objective-C 代码风格的文档，来规范代码，便于维护和阅读。原文太长了，机翻的+人工简单筛查了一下。更新过了，已经精校过一遍了。
 
 ## Credits
 
@@ -117,7 +117,7 @@ UIColor *myColour = [UIColor whiteColor];
 
 ## 缩进
 
-* 使用默认的tabs 来锁紧。（原文是用两个空格，非常不认同） 
+* 使用默认的tabs 来缩进。
 * 方法大括号和其他大括号(`if`/`else` /`switch` /`while`等)总是在与语句相同的行上打开, 但在新行上关闭. (else 前后记得加个空格)
 
 **首选:**
@@ -143,7 +143,7 @@ else {
 ```
 
 * 在方法之间应该有一个空白行, 以帮助视觉清晰和组织. 方法中的空格应该按功能分离, 但通常应该是新的方法. 
-* 推荐使用自动合成. 但是如果需要, `@ synthesize`和`@ dynamic`应该在实现中的新行上声明. 
+* 推荐使用自动合成. 但是如果需要, `@synthesize`和`@dynamic`应该在实现中的新行上声明. 
 * 应经常避免冒号对齐方法. 在一个方法里面有多于三个冒号的情况下, 冒号对齐使代码更易读. 但是 **千万不要** 在有block的时候用冒号对齐, 因为Xcode的缩进会使它难以辨认. 
 
 **首选:**
@@ -177,7 +177,7 @@ else {
 
 应该尽量避免大段注释, 因为代码最好配上间歇性的、少量的注释就能做到自注释。*例外* :这不适用于用于生成文档的那些注释. 
 
-**头文件里推荐写成下面这个格式：**
+头文件里推荐写成下面这个格式，而且这样的格式可以让编译器直接读取，调用时会给出各参数、返回的提示。
 
 ```
 /**
@@ -217,6 +217,7 @@ UIButton *setBut;
 
 ```objc
 static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+static NSString * const userNameString;
 ```
 
 **不推荐:**
@@ -225,7 +226,7 @@ static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDura
 static NSTimeInterval const fadetime = 1.7;
 ```
 
-属性应该是驼峰式, 前导词是小写. 使用自动合成属性而不是手动@synthesize语句, 除非你有很好的理由. 
+属性应该是驼峰式, 前导词是小写. 使用自动合成属性而不是手动`@synthesize`语句, 除非你有很好的理由. 
 
 **首选:**
 
