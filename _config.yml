@@ -14,6 +14,6 @@ kramdown:
   parse_block_html: true
   syntax_highlighter: rouge
 permalink: pretty
-paginate: 5
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 gems: [jekyll-paginate]
