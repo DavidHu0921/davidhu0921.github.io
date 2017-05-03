@@ -23,8 +23,6 @@ categories: iOS学习笔记
 
 ![Storyboard img 4](/img/SB4.png)
 
-![Storyboard img 5](/img/SB5.png)
-
 这个时候main storyboard 看起来应该像这样。
 
 ![Storyboard img 6](/img/SB6.png)
