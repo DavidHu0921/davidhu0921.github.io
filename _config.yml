@@ -1,20 +1,28 @@
 # Site settings
-title: Windyland
+title: Project Pages
+description: "An Integrated Scientific Blogging Template"
+url: "https://projectpages.github.io"
+
+
+
+
+# Secondary Parameters
+baseurl: "/project-pages"
 header-img: img/home-bg.jpg
-email: david@davidwho.me
-description: "Thinking, Coding, Sharing"
-baseurl: ""
-url: "http:/davidwho.me"
-twitter_username: DavidHu_iOS
-github_username:  DavidHu0921
 headercolor: "#FFFFFF"
+logo: /project-pages/img/logos/Project-Pages-New-Logo-Inverted.png
+
+# Tertiary Parameters
+github_username:  projectpages
+project_repository: project-pages
+disqus_shortname: project-pages
+g-analytics: UA-75881392-1
+altmetric: true
 
 # Build settings
 gems: [jekyll-paginate]
 markdown: kramdown
-kramdown:
-  parse_block_html: true
-  syntax_highlighter: rouge
+highlighter: rouge
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
