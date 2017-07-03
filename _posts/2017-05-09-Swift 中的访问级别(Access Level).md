@@ -7,6 +7,7 @@ categories: iOS学习笔记
 
 [原文链接](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html)
 
+
 ## 访问级别(*Access Level*)
 
 Swift为您的代码中的实体提供了五个不同的访问级别(*Access Level*)。这些访问级别与实体定义的源文件相关，并且与源文件所属的模块相关。
