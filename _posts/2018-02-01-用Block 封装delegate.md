@@ -12,18 +12,18 @@ categories: iOS学习笔记
 需要封装的类大致长这个样子：
 
 ```
-@protocol ZeldaManagerDelegate <NSObject>
+@protocol ZeldaDelegate <NSObject>
 
 - (void)requestSuccess:()message;
 - (void)requestFailed:()error;
 
 @end
 
-@interface ZeldaManager : NSObject
+@interface Zelda : NSObject
 
-@property (nonatomic, weak) id<ZeldaManagerDelegate> delegate;
+@property (nonatomic, weak) id<ZeldaDelegate> delegate;
 
-+ (instancetype)sharedManager;
++ (instancetype)sharedX;
 - (void)requestSomething:(NSInteger)id;
 
 @end
