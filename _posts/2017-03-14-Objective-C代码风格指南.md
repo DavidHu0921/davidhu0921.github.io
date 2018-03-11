@@ -226,6 +226,17 @@ static NSString * const userNameString;
 static NSTimeInterval const fadetime = 1.7;
 ```
 
+> 工作中发现使用到常量的情况经常是各种identify，这种情况下不希望外面看到这个identify 具体是什么，又要把这个暴露出去给别人用，那么我们就要用到FOUNDATION_EXTERN
+
+```objc
+xxx.h
+FOUNDATION_EXTERN NSString * const sometingIdentify;
+
+xxx.m
+NSString * const sometingIdentify = @"xxx";
+```
+
+
 属性应该是驼峰式, 前导词是小写. 使用自动合成属性而不是手动`@synthesize`语句, 除非你有很好的理由. 
 
 **首选:**
