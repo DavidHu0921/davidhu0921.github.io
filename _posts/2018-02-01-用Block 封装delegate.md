@@ -23,7 +23,7 @@ categories: iOS学习笔记
 
 @property (nonatomic, weak) id<ZeldaDelegate> delegate;
 
-+ (instancetype)sharedX;
+- (id)initWithName:(NSString *)name;
 - (void)requestSomething:(NSInteger)id;
 
 @end
@@ -60,6 +60,7 @@ typedef void (^ZeldaLoadFailure)(void);
 
 @property (nonatomic, copy) ZeldaLoadSuccess success;
 @property (nonatomic, copy) ZeldaLoadFailure failure;
+@property (nonatomic, strong) Zelda *z;
 
 @end
 
@@ -73,6 +74,8 @@ typedef void (^ZeldaLoadFailure)(void);
         
         // call the func you really wanna wrapper it
         // and set ZeldaWrapper itself as the delegate
+        self.z = [[Zelda alloc] initWithName:@"xxx"];
+        self.z.delegate = self;
     }
     return self;
 }
