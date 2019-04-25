@@ -53,6 +53,26 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
     }
 ```
 
+Swift 解法3:
+```swift
+// 更新到swift5
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var dict = [Int: Int]()
+        
+        for (index, one) in nums.enumerated() {
+            let two:Int = target - one
+            if let lastIndex = dict[two] {
+                return [lastIndex, index]
+            }
+            dict[one] = index
+        }
+        
+        return []
+    }
+}
+```
+
 思路简述：
 
 //TODO
