@@ -61,11 +61,9 @@ class Solution {
         }
 
         for i in start..<self.array.count {
-            // Nice to check if the current candidate array[i] is smaller or equal to our remainder
-            // Or else we won't bother to add it to the current.
             guard array[i] <= remainder else { return }
             current.append(array[i])
-            dfs(&answer, &current, remainder-array[i], i) // not i-1 since we can reuse same element
+            dfs(&answer, &current, remainder-array[i], i)
             current.removeLast()
         }
     }
