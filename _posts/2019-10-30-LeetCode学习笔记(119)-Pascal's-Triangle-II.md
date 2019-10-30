@@ -75,6 +75,8 @@ class Solution {
 
 ### 思路简述
 
-这一题是上一题杨辉三角的进化版，但是只要求某一行，不用输出全部。因此第一种解法很容易理解，就是把第一个第二个相加等于后一个。[第二种解法](https://leetcode-cn.com/problems/pascals-triangle-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--28/) 看这个链接最后一部分，直接使用了杨辉三角的数学公式算到答案，很简单直接，需要一定的数学功底
+这一题是上一题杨辉三角的进化版，但是只要求某一行，不用输出全部。因此第一种解法很容易理解，就是把第一个第二个相加等于后一个。[第二种解法](https://leetcode-cn.com/problems/pascals-triangle-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--28/) 看这个链接最后一部分，直接使用了杨辉三角的数学公式算到答案，很简单直接，需要一定的数学功底。
+
+有一点值得注意的是，这题对空间复杂度有额外要求，因此不能先用上一题的步骤求出全集再取某一行，这样不能满足空间复杂度O(k) 的要求
 
 
