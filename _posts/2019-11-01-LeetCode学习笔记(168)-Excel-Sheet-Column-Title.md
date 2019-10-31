@@ -69,7 +69,7 @@ class Solution {
 ```swift
 let value = 65
 let u = Unicode.Scalar(value)
-let char = String(Character(u!))
-print(char) // A
+let str = String(Character(u!))
+print(str) // A
 ```
 
