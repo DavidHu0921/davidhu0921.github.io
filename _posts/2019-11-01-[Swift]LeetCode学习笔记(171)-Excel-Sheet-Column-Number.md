@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(171) Excel Sheet Column Number"
+title:  "[Swift]LeetCode学习笔记(171) Excel Sheet Column Number"
 date:   2019-11-01 23:30:00 +0800
 categories: 算法
 ---

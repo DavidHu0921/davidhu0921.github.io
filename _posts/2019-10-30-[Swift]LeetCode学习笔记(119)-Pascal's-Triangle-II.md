@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(119) Pascal's Triangle II"
+title:  "[Swift]LeetCode学习笔记(119) Pascal's Triangle II"
 date:   2019-10-30 09:00:00 +0800
 categories: 算法
 ---

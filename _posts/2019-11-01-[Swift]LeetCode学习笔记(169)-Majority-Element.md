@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(169) Majority Element"
+title:  "[Swift]LeetCode学习笔记(169) Majority Element"
 date:   2019-11-01 21:10:00 +0800
 categories: 算法
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(206) Reverse Linked List"
+title:  "[Swift]LeetCode学习笔记(206) Reverse Linked List"
 date:   2019-11-19 23:10:00 +0800
 categories: 算法
 ---

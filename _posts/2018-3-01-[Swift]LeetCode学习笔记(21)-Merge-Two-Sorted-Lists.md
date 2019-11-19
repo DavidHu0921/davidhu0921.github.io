@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(21) Merge Two Sorted Lists"
+title:  "[Swift]LeetCode学习笔记(21) Merge Two Sorted Lists"
 date:   2018-03-01 08:00:00 +0800
 categories: 算法
 ---

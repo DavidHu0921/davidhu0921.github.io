@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(202) Happy Number"
+title:  "[Swift]LeetCode学习笔记(202) Happy Number"
 date:   2019-11-11 00:10:00 +0800
 categories: 算法
 ---

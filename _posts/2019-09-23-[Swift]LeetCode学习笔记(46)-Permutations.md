@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(46) Permutations"
+title:  "[Swift]LeetCode学习笔记(46) Permutations"
 date:   2019-09-23 08:00:00 +0800
 categories: 算法
 ---

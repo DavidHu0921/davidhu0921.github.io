@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(205) Isomorphic Strings"
+title:  "[Swift]LeetCode学习笔记(205) Isomorphic Strings"
 date:   2019-11-18 23:10:00 +0800
 categories: 算法
 ---

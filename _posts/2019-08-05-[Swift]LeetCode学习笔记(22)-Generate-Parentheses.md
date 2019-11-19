@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(22) Generate Parentheses"
+title:  "[Swift]LeetCode学习笔记(22) Generate Parentheses"
 date:   2019-08-05 08:00:00 +0800
 categories: 算法
 ---

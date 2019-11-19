@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(136) Single Number"
+title:  "[Swift]LeetCode学习笔记(136) Single Number"
 date:   2019-10-31 22:00:00 +0800
 categories: 算法
 ---

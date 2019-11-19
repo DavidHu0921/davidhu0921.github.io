@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(20) Valid Parentheses"
+title:  "[Swift]LeetCode学习笔记(20) Valid Parentheses"
 date:   2018-02-28 11:00:00 +0800
 categories: 算法
 ---

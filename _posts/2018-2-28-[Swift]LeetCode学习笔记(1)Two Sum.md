@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(1) Two Sum"
+title:  "[Swift]LeetCode学习笔记(1) Two Sum"
 date:   2018-02-28 09:01:00 +0800
 categories: 算法
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(172) Factorial Trailing Zeroes"
+title:  "[Swift]LeetCode学习笔记(172) Factorial Trailing Zeroes"
 date:   2019-11-02 00:00:00 +0800
 categories: 算法
 ---

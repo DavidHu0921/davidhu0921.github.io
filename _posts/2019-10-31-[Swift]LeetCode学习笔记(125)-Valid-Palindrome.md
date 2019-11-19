@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(125) Valid Palindrome"
+title:  "[Swift]LeetCode学习笔记(125) Valid Palindrome"
 date:   2019-10-31 00:20:00 +0800
 categories: 算法
 ---

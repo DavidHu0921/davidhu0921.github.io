@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(203) Remove Linked List Elements"
+title:  "[Swift]LeetCode学习笔记(203) Remove Linked List Elements"
 date:   2019-11-11 00:50:00 +0800
 categories: 算法
 ---

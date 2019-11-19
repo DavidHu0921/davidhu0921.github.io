@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(111) Minimum Depth of Binary Tree"
+title:  "[Swift]LeetCode学习笔记(111) Minimum Depth of Binary Tree"
 date:   2019-10-29 08:00:00 +0800
 categories: 算法
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(122) Best Time to Buy and Sell Stock II"
+title:  "[Swift]LeetCode学习笔记(122) Best Time to Buy and Sell Stock II"
 date:   2019-10-30 11:00:00 +0800
 categories: 算法
 ---

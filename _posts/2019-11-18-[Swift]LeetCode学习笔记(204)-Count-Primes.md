@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(204) Count Primes"
+title:  "[Swift]LeetCode学习笔记(204) Count Primes"
 date:   2019-11-18 22:10:00 +0800
 categories: 算法
 ---

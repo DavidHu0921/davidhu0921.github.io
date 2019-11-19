@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(19) Remove Nth Node From End of List"
+title:  "[Swift]LeetCode学习笔记(19) Remove Nth Node From End of List"
 date:   2019-07-29 08:00:00 +0800
 categories: 算法
 ---

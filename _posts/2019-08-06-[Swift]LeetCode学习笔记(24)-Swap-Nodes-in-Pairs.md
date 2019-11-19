@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(24) Swap Nodes in Pairs"
+title:  "[Swift]LeetCode学习笔记(24) Swap Nodes in Pairs"
 date:   2019-08-06 08:00:00 +0800
 categories: 算法
 ---

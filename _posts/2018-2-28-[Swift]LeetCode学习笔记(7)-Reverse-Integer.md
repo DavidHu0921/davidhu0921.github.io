@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(7) Reverse Integer"
+title:  "[Swift]LeetCode学习笔记(7) Reverse Integer"
 date:   2018-02-28 09:00:00 +0800
 categories: 算法
 ---

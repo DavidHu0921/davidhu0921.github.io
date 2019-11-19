@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LeetCode学习笔记(9) Palindrome Number"
+title:  "[Swift]LeetCode学习笔记(9) Palindrome Number"
 date:   2018-02-28 10:00:00 +0800
 categories: 算法
 ---
